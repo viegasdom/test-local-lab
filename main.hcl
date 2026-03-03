@@ -1,5 +1,5 @@
 resource "lab" "main" {
-  title       = "Webhook Test Lab - Metadata Debug"
+  title       = "Webhook Test Lab - Sync Test 3"
   description = "Outline the lab's learning objectives, topics, and prerequisites."
 
   layout = resource.layout.single_panel
