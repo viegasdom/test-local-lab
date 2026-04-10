@@ -14,5 +14,8 @@ resource "layout" "single_panel" {
     tab "multihome" {
       target = resource.terminal.multihome
     }
+    tab "dynamic" {
+      target = resource.terminal.dynamic
+    }
   }
 }

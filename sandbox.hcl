@@ -58,6 +58,11 @@ resource "container" "multihome" {
   }
 }
 
+resource "terminal" "dynamic" {
+  target = resource.container.dynamic
+  shell  = "/bin/sh"
+}
+
 resource "terminal" "server" {
   target = resource.container.server
   shell  = "/bin/sh"
