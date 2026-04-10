@@ -1,18 +1,18 @@
 resource "layout" "single_panel" {
   column {
-    panel {
-      tab {
-        target = resource.terminal.server
-        title  = "server"
-      }
-      tab {
-        target = resource.terminal.client
-        title  = "client"
-      }
-      tab {
-        target = resource.terminal.multihome
-        title  = "multihome"
-      }
+    instructions {}
+  }
+
+  column {
+    tab "server" {
+      target = resource.terminal.server
+      active = true
+    }
+    tab "client" {
+      target = resource.terminal.client
+    }
+    tab "multihome" {
+      target = resource.terminal.multihome
     }
   }
 }
