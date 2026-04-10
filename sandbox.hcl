@@ -48,8 +48,8 @@ resource "container" "multihome" {
   }
 
   network {
-    id         = resource.network.public.meta.id
-    ip_address = "10.0.5.30"
+    id         = resource.network.private.meta.id
+    ip_address = "10.0.6.30"
   }
 
   network {

@@ -8,7 +8,7 @@ resource "lab" "main" {
     theme = "modern-dark"
 
     timelimit {
-      duration   = "15m"
+      duration   = "120m"
       show_timer = true
     }
 
