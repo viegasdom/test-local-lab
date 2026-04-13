@@ -18,5 +18,11 @@ resource "layout" "single_panel" {
     tab "dynamic" {
       target = resource.terminal.dynamic
     }
+    tab "isolated" {
+      target = resource.terminal.isolated
+    }
+    tab "private_only" {
+      target = resource.terminal.private_only
+    }
   }
 }

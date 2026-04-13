@@ -58,6 +58,35 @@ resource "container" "multihome" {
   }
 }
 
+# No network, verifies isolation (localhost only)
+resource "container" "isolated" {
+  image {
+    name = "alpine"
+  }
+}
+
+# Only on private, verifies cross-network isolation against public-only containers
+resource "container" "private_only" {
+  image {
+    name = "alpine"
+  }
+
+  network {
+    id         = resource.network.private.meta.id
+    ip_address = "10.0.6.50"
+  }
+}
+
+resource "terminal" "isolated" {
+  target = resource.container.isolated
+  shell  = "/bin/sh"
+}
+
+resource "terminal" "private_only" {
+  target = resource.container.private_only
+  shell  = "/bin/sh"
+}
+
 resource "terminal" "dynamic" {
   target = resource.container.dynamic
   shell  = "/bin/sh"
